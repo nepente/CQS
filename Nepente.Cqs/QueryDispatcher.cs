@@ -25,9 +25,15 @@ namespace Nepente.Cqs
         {
             var handlerType = typeof(IQueryHandler<,>).MakeGenericType(query.GetType(), typeof(TQueryResult));
 
-            dynamic handler = _serviceProvider.GetService(handlerType);
-
-            return handler.Handle((dynamic)query);
+            try
+            {
+                dynamic handler = _serviceProvider.GetService(handlerType);
+                return handler.Handle((dynamic)query);
+            }
+            catch (Exception ex)
+            {
+                throw new HandlerNotFoundException(ex);
+            }
         }
     }
 }
