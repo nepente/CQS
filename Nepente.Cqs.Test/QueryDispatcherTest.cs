@@ -7,6 +7,7 @@ namespace Nepente.Cqs.Test
     public class QueryDispatcherTest
     {
         [TestMethod]
+        [ExpectedException(typeof(HandlerNotFoundException))]
         public void HandlerNotFoundExceptionTest()
         {
             var container = new Container();
