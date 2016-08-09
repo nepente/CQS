@@ -25,9 +25,16 @@ namespace Nepente.Cqs
         {
             var handlerType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
 
-            dynamic handler = _serviceProvider.GetService(handlerType);
+            try
+            {
+                dynamic handler = _serviceProvider.GetService(handlerType);
+                handler.Handle((dynamic)command);
+            }
+            catch (Exception ex)
+            {
 
-            handler.Handle((dynamic)command);
+                throw new HandlerNotFoundException(ex);
+            }
         }
     }
 }

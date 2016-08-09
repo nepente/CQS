@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nepente.Cqs", "Nepente.Cqs\Nepente.Cqs.csproj", "{08954927-2921-4BE8-803B-9B6E6B3B5932}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nepente.Cqs.Test", "Nepente.Cqs.Test\Nepente.Cqs.Test.csproj", "{6231120B-4777-4632-A749-BCCDE33B7E14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +17,12 @@ Global
 		{08954927-2921-4BE8-803B-9B6E6B3B5932}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08954927-2921-4BE8-803B-9B6E6B3B5932}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08954927-2921-4BE8-803B-9B6E6B3B5932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6231120B-4777-4632-A749-BCCDE33B7E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6231120B-4777-4632-A749-BCCDE33B7E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6231120B-4777-4632-A749-BCCDE33B7E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6231120B-4777-4632-A749-BCCDE33B7E14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
