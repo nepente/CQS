@@ -4,7 +4,7 @@ namespace Nepente.Cqs
 {
     public class HandlerNotFoundException : Exception
     {
-        private const string message = "Erro ao encontrar um handler para a query solicitada. Handler associado a Query e QueryResult ou Command não registrada.";
+        private const string message = "There is no handler for the query. Perhaps you didn't register the Query/QueryResult pair or the configuration was invalid.";
 
         public HandlerNotFoundException() : base(message)
         {}
