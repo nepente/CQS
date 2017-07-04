@@ -23,12 +23,12 @@ namespace Nepente.Cqs
 
         public TQueryResult Dispatch<TQuery, TQueryResult>(TQuery query) where TQuery : IQuery
         {
-            var handlerType = typeof(IQueryHandler<,>).MakeGenericType(query.GetType(), typeof(TQueryResult));
+            var handlerType = typeof(IQueryHandler<TQuery, TQueryResult>);
 
             try
             {
-                dynamic handler = _serviceProvider.GetService(handlerType);
-                return handler.Handle((dynamic)query);
+                var handler = (IQueryHandler<TQuery, TQueryResult>) _serviceProvider.GetService(handlerType);
+                return handler.Handle(query);
             }
             catch (Exception ex)
             {

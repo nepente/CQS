@@ -23,12 +23,12 @@ namespace Nepente.Cqs
 
         public void Dispatch<TCommand>(TCommand command) where TCommand : ICommand
         {
-            var handlerType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
+            var handlerType = typeof(ICommandHandler<TCommand>);
 
             try
             {
-                dynamic handler = _serviceProvider.GetService(handlerType);
-                handler.Handle((dynamic)command);
+                var handler = (ICommandHandler<TCommand>) _serviceProvider.GetService(handlerType);
+                handler.Handle(command);
             }
             catch (Exception ex)
             {
