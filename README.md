@@ -32,7 +32,7 @@ var commandDispatcher = new CommandDispatcher(container);
 
 A more real world example where IQueryHandler and ICommandHandlers are dynamically registered with [SimpleInjector](https://simpleinjector.org).
 
-```
+``` csharp
 var queryAndCommandsAssemblies = new[] { typeof(Startup).Assembly }; // Add here any assembly that contains queries or commands
 var container = new Container();
 container.Register<ICommandDispatcher>(() => new CommandDispatcher(this), Lifestyle.Singleton);
