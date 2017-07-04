@@ -8,12 +8,7 @@
 
         public CommandDispatcher(IServiceProvider serviceProvider)
         {
-            if (serviceProvider == null)
-            {
-                throw new ArgumentNullException("serviceProvider");
-            }
-
-            _serviceProvider = serviceProvider;
+            _serviceProvider = serviceProvider ?? throw new ArgumentNullException("serviceProvider");
         }
 
         public void Dispatch<TCommand>(TCommand command)

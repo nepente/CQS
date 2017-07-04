@@ -11,10 +11,7 @@
         public void HandlerNotFoundExceptionTest()
         {
             var container = new Container();
-            container.Register<IQueryDispatcher>(() => new QueryDispatcher(container));
-
-            var queryDispatcher = container.GetInstance<IQueryDispatcher>();
-
+            var queryDispatcher = new QueryDispatcher(container);
             queryDispatcher.Dispatch<UserQuery, User>(new UserQuery());
         }
 

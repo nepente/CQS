@@ -11,11 +11,9 @@
         public void HandlerNotFoundExceptionTest()
         {
             var container = new Container();
-            container.Register<ICommandDispatcher>(() => new CommandDispatcher(container));
+            var commandDispatcher = new CommandDispatcher(container);
 
-            var commandDispatcher = container.GetInstance<ICommandDispatcher>();
-
-            commandDispatcher.Dispatch<UserCommand>(new UserCommand());
+            commandDispatcher.Dispatch(new UserCommand());
         }
 
         private class UserCommand : ICommand

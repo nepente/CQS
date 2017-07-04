@@ -8,12 +8,7 @@
 
         public QueryDispatcher(IServiceProvider serviceProvider)
         {
-            if (serviceProvider == null)
-            {
-                throw new ArgumentNullException("serviceProvider");
-            }
-
-            _serviceProvider = serviceProvider;
+            _serviceProvider = serviceProvider ?? throw new ArgumentNullException("serviceProvider");
         }
 
         public TQueryResult Dispatch<TQuery, TQueryResult>(TQuery query)
