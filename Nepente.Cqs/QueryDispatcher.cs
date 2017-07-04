@@ -1,11 +1,6 @@
-﻿using System;
-
-namespace Nepente.Cqs
+﻿namespace Nepente.Cqs
 {
-    public interface IQueryDispatcher
-    {
-        TQueryResult Dispatch<TQuery, TQueryResult>(TQuery query) where TQuery : IQuery;
-    }
+    using System;
 
     public class QueryDispatcher : IQueryDispatcher
     {
@@ -15,19 +10,20 @@ namespace Nepente.Cqs
         {
             if (serviceProvider == null)
             {
-                throw new ArgumentNullException("serviceProvider");   
+                throw new ArgumentNullException("serviceProvider");
             }
 
             _serviceProvider = serviceProvider;
         }
 
-        public TQueryResult Dispatch<TQuery, TQueryResult>(TQuery query) where TQuery : IQuery
+        public TQueryResult Dispatch<TQuery, TQueryResult>(TQuery query)
+            where TQuery : IQuery
         {
             var handlerType = typeof(IQueryHandler<TQuery, TQueryResult>);
 
             try
             {
-                var handler = (IQueryHandler<TQuery, TQueryResult>) _serviceProvider.GetService(handlerType);
+                var handler = (IQueryHandler<TQuery, TQueryResult>)_serviceProvider.GetService(handlerType);
                 return handler.Handle(query);
             }
             catch (Exception ex)
@@ -37,4 +33,3 @@ namespace Nepente.Cqs
         }
     }
 }
-

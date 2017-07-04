@@ -1,11 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nepente.Cqs", "Nepente.Cqs\Nepente.Cqs.csproj", "{08954927-2921-4BE8-803B-9B6E6B3B5932}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nepente.Cqs", "Nepente.Cqs\Nepente.Cqs.csproj", "{08954927-2921-4BE8-803B-9B6E6B3B5932}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nepente.Cqs.Test", "Nepente.Cqs.Test\Nepente.Cqs.Test.csproj", "{6231120B-4777-4632-A749-BCCDE33B7E14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nepente.Cqs.Test", "Nepente.Cqs.Test\Nepente.Cqs.Test.csproj", "{6231120B-4777-4632-A749-BCCDE33B7E14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F2D63AAE-BF87-430F-8F66-3A01E311094F}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+		Style.ruleset = Style.ruleset
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

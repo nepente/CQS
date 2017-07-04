@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SimpleInjector;
-
-namespace Nepente.Cqs.Test
+﻿namespace Nepente.Cqs.Test
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SimpleInjector;
+
     [TestClass]
     public class CommandDispatcherTest
     {
@@ -18,7 +18,8 @@ namespace Nepente.Cqs.Test
             commandDispatcher.Dispatch<UserCommand>(new UserCommand());
         }
 
-        
-        class UserCommand : ICommand { }
+        private class UserCommand : ICommand
+        {
+        }
     }
 }

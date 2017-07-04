@@ -1,5 +1,6 @@
 ﻿namespace Nepente.Cqs
 {
-    public interface IQuery { }
+    public interface IQuery
+    {
+    }
 }
-

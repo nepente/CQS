@@ -1,11 +1,6 @@
-﻿using System;
-
-namespace Nepente.Cqs
+﻿namespace Nepente.Cqs
 {
-    public interface ICommandDispatcher
-    {
-        void Dispatch<TCommand>(TCommand command) where TCommand : ICommand;
-    }
+    using System;
 
     public class CommandDispatcher : ICommandDispatcher
     {
@@ -21,21 +16,20 @@ namespace Nepente.Cqs
             _serviceProvider = serviceProvider;
         }
 
-        public void Dispatch<TCommand>(TCommand command) where TCommand : ICommand
+        public void Dispatch<TCommand>(TCommand command)
+            where TCommand : ICommand
         {
             var handlerType = typeof(ICommandHandler<TCommand>);
 
             try
             {
-                var handler = (ICommandHandler<TCommand>) _serviceProvider.GetService(handlerType);
+                var handler = (ICommandHandler<TCommand>)_serviceProvider.GetService(handlerType);
                 handler.Handle(command);
             }
             catch (Exception ex)
             {
-
                 throw new HandlerNotFoundException(ex);
             }
         }
     }
 }
-

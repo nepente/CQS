@@ -1,5 +1,6 @@
 ﻿namespace Nepente.Cqs
 {
-    public interface ICommand { }
+    public interface ICommand
+    {
+    }
 }
-

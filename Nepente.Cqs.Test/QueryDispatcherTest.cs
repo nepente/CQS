@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SimpleInjector;
-
-namespace Nepente.Cqs.Test
+﻿namespace Nepente.Cqs.Test
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SimpleInjector;
+
     [TestClass]
     public class QueryDispatcherTest
     {
@@ -18,8 +18,12 @@ namespace Nepente.Cqs.Test
             queryDispatcher.Dispatch<UserQuery, User>(new UserQuery());
         }
 
+        private class User
+        {
+        }
 
-        class User { }
-        class UserQuery : IQuery { }
+        private class UserQuery : IQuery
+        {
+        }
     }
 }

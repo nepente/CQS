@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Indikatore Rules for StyleCop.Analyzers" Description=" " ToolsVersion="15.0">
+  <Include Path="StyleCop.Analyzers.ruleset" Action="Default" />
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA0001" Action="None" />
+    <Rule Id="SA1005" Action="Error" />
+    <Rule Id="SA1012" Action="Error" />
+    <Rule Id="SA1013" Action="Error" />
+    <Rule Id="SA1101" Action="None" />
+    <Rule Id="SA1200" Action="Error" />
+    <Rule Id="SA1309" Action="None" />
+    <Rule Id="SA1402" Action="Error" />
+    <Rule Id="SA1516" Action="None" />
+    <Rule Id="SA1633" Action="None" />
+    <Rule Id="SA1652" Action="None" />
+    <Rule Id="SX1101" Action="Error" />
+    <Rule Id="SX1309" Action="Error" />
+  </Rules>
+</RuleSet>
